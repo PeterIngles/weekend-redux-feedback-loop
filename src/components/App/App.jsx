@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div className='App'>
-      <Header/>
       <Router>
+      <Header/>
         <Route path="/" exact>
           <Question1 />
         </Route>
