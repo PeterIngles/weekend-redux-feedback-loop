@@ -30,7 +30,7 @@ export function Review() {
             }).catch((error) => {
                 console.log('put failed:', error);
             })
-        history.push('/')
+        history.push('/confirmed')
     }
 
     return (

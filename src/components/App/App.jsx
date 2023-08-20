@@ -11,6 +11,7 @@ import { Question2 } from '../Questions/Question2';
 import { Question3 } from '../Questions/Question3';
 import { Question4 } from '../Questions/Question4';
 import { Review } from '../Review/Review';
+import { Confirmed } from '../Review/Confirmed'
 
 function App() {
 
@@ -39,6 +40,9 @@ function App() {
         </Route>
         <Route path="/review"exact>
           <Review />
+        </Route>
+        <Route path="/confirmed">
+          <Confirmed/>
         </Route>
       </Router>
     </div>
