@@ -4,25 +4,17 @@ import './App.css';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
+import { HashRouter as Router, Route, Link } from 'react-router-dom'
+
+import { Question1 } from '../Questions/Question1';
+import { Question2 } from '../Questions/Question2';
+import { Question3 } from '../Questions/Question3';
 
 function App() {
 
-  
 
-  const [questionOneAnswer, setQuestionOneAnswer] = useState('')
-  const dispatch = useDispatch();
 
-  const submitQuestionOne = (event) => {
-    event.preventDefault()
-    console.log("in submitQuestionOne")
-    let Q1Package = {questionOneAnswer: questionOneAnswer}
-    console.log(`Adding questionOneAnswer`, {questionOneAnswer})
-    dispatch({
-      type: "SUBMIT_Q1",
-      payload: Q1Package
-    })
-    // history.push('/2')
-  }
+
 
   return (
     <div className='App'>
@@ -30,20 +22,20 @@ function App() {
         <h1 className='App-title'>Feedback!</h1>
         <h4>Don't forget it!</h4>
       </header>
-      <form className="questionFormOne">
-        <h2>How are you feeling today?</h2>
-        <input
-          required
-          type="number"
-          min={1}
-          max={6}
-          placeholder="1-6"
-          value={questionOneAnswer}
-          onChange={(event) => setQuestionOneAnswer(event.target.value)} />
-        <button onClick={submitQuestionOne}>NEXT➡️</button>
-      </form>
+      <Router>
+        <Route path="/"exact>
+          <Question1 />
+        </Route>
+        <Route path="/2"exact>
+          <Question2 />
+        </Route>
+        <Route path="/3"exact>
+          <Question3 />
+        </Route>
+      </Router>
     </div>
   );
 }
 
 export default App;
+

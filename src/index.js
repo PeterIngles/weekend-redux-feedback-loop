@@ -12,6 +12,14 @@ const surveyAnswers = (state =[], action) => {
         console.log("surveyAnswers has recieved SUBMIT_Q1 payload")
         return [...state, action.payload]
     }
+    if (action.type === "SUBMIT_Q2") {
+        console.log("surveyAnswers has recieved SUBMIT_Q1 payload")
+        return [...state, action.payload]
+    }
+    if (action.type === "SUBMIT_Q3") {
+        console.log("surveyAnswers has recieved SUBMIT_Q1 payload")
+        return [...state, action.payload]
+    }
     return state
   }
 
