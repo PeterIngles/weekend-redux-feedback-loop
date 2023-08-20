@@ -14,6 +14,10 @@ export function Question2() {
       console.log("in submitQuestionTwo")
       let Q2Package = questionTwoAnswer
       console.log(`Adding questionTwoAnswer`, { questionTwoAnswer })
+      if (!questionTwoAnswer) {
+        alert("Please select and answer");
+        return;
+      }
       dispatch({
         type: "SUBMIT_Q2",
         payload: Q2Package
