@@ -8,12 +8,18 @@ import logger from 'redux-logger';
 
 const surveyAnswers = (state =[], action) => {
     console.log("surveyAnswers reducer")
+    if (action.type === "SUBMIT_Q1") {
+        console.log("surveyAnswers has recieved SUBMIT_Q1 payload")
+        return [...state, action.payload]
+    }
+    return state
   }
 
 
 const reduxStore = createStore(
     combineReducers({
         // reducers go here
+        surveyAnswers
     }),
     applyMiddleware(logger)
 )

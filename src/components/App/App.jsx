@@ -21,6 +21,7 @@ function App() {
       type: "SUBMIT_Q1",
       payload: Q1Package
     })
+    // history.push('/2')
   }
 
   return (
@@ -34,9 +35,9 @@ function App() {
         <input
           required
           type="number"
-          min="1"
-          max="6"
-          placeholder={null}
+          min={1}
+          max={6}
+          placeholder="1-6"
           value={questionOneAnswer}
           onChange={(event) => setQuestionOneAnswer(event.target.value)} />
         <button onClick={submitQuestionOne}>NEXT➡️</button>
