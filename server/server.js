@@ -14,9 +14,8 @@ app.post('/answers', (req, res) => {
     console.log('in answers post', req.body)
 
     let newAnswers = req.body
-
     // Storing newTask properties in an array for readability in pool.query
-    let answersPostArray = [newAnswers.feeling, newAnswers.understanding, newAnswers.support, newAnswers.comments||null]
+    let answersPostArray = [newAnswers.Feeling, newAnswers.Understanding, newAnswers.Support, newAnswers.Comments||null]
 
     let queryText = `
     INSERT INTO "feedback" 
