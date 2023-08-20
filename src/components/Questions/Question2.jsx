@@ -34,7 +34,7 @@ export function Question2() {
   return <div>
     <form className="questionFormTwo">
       <h2>How well are you understanding the content?</h2>
-      <FormControl sx={{ m: 1, minWidth: 200 }}>
+      <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
         <InputLabel>Understanding</InputLabel>
         <Select
           required

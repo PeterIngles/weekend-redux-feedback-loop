@@ -1,11 +1,6 @@
 import React from 'react';
-import axios from 'axios';
 import './App.css';
-import { useState } from 'react';
-import { useHistory } from 'react-router-dom'
-import { useDispatch } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom'
-
+import { HashRouter as Router, Route} from 'react-router-dom'
 import { Question1 } from '../Questions/Question1';
 import { Question2 } from '../Questions/Question2';
 import { Question3 } from '../Questions/Question3';

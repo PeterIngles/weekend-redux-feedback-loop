@@ -34,7 +34,7 @@ export function Question3() {
     return <div>
         <form className="questionFormThree">
             <h2>How well are you being supported?</h2>
-            <FormControl sx={{ m: 1, minWidth: 200 }}>
+            <FormControl variant="standard" sx={{ m: 1, minWidth: 200 }}>
         <InputLabel>Supported</InputLabel>
         <Select
           required

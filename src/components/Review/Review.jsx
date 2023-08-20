@@ -1,24 +1,25 @@
-// import { useState } from 'react';
-import { useDispatch, useSelector, } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import axios from 'axios';
-import { useState } from 'react';
-
-import { useHistory } from 'react-router-dom'
+import { List, ListItem } from '@mui/material';
+import Button from '@mui/material/Button';
+import Container from '@mui/material/Container';
+import { useHistory } from 'react-router-dom';
 
 export function Review() {
     const surveyAnswers = useSelector(store => store.surveyAnswers)
-    console.log("???")
 
     const history = useHistory();
     const dispatch = useDispatch();
     console.log("surveyAnswers", surveyAnswers)
-
+    console.log("🔴", surveyAnswers)
     let answersPackage = {
         feeling: surveyAnswers[0],
         understanding: surveyAnswers[1],
         support: surveyAnswers[2],
         comments: surveyAnswers[3],
     }
+
+    const keysAsString = Object.keys(answersPackage).map((key) => String(key));
 
     console.log("answersPackage", answersPackage)
 
@@ -35,23 +36,17 @@ export function Review() {
 
     return (
         <>
-            <h1>REVIEW</h1>
+            <Container>
+                <List>
+                    {surveyAnswers.map((item, index) => (
+                        <ListItem key={index}>{keysAsString[index]}   {item}</ListItem>
+                    ))}
+                </List>
 
-            <div>
-                <h2>Answers</h2>
-                <div>
-                    <ul>
-                        {surveyAnswers.map((item, index) => {
-                            return <li key={index}>{item}</li>;
-                        })}
-                    </ul>
-                </div>
-            </div>
-
-            <h1>
-                <button onClick={() => handleSubmit()}>SUBMIT</button>
-            </h1>
-
+                <Button variant="contained" onClick={() => handleSubmit()}>
+                    SUBMIT
+                </Button>
+            </Container>
         </>
     );
 }
