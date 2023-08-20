@@ -46,12 +46,12 @@ export function Question1() {
                     <MenuItem value="">
                         <em>None</em>
                     </MenuItem>
-                    <MenuItem value={1}>1</MenuItem>
+                    <MenuItem value={1}>1 least</MenuItem>
                     <MenuItem value={2}>2</MenuItem>
                     <MenuItem value={3}>3</MenuItem>
                     <MenuItem value={4}>4</MenuItem>
                     <MenuItem value={5}>5</MenuItem>
-                    <MenuItem value={6}>6</MenuItem>
+                    <MenuItem value={6}>6 most</MenuItem>
                 </Select>
             </FormControl>
             <Button onClick={submitQuestionOne} variant="contained" endIcon={<SendIcon />}>
