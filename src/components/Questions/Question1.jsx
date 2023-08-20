@@ -13,7 +13,7 @@ export function Question1() {
     const submitQuestionOne = (event) => {
       event.preventDefault()
       console.log("in submitQuestionOne")
-      let Q1Package = { questionOneAnswer: questionOneAnswer }
+      let Q1Package = questionOneAnswer
       console.log(`Adding questionOneAnswer`, { questionOneAnswer })
       dispatch({
         type: "SUBMIT_Q1",

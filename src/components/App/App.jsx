@@ -10,6 +10,7 @@ import { Question1 } from '../Questions/Question1';
 import { Question2 } from '../Questions/Question2';
 import { Question3 } from '../Questions/Question3';
 import { Question4 } from '../Questions/Question4';
+import { Review } from '../Review/Review';
 
 function App() {
 
@@ -35,6 +36,9 @@ function App() {
         </Route>
         <Route path="/4"exact>
           <Question4 />
+        </Route>
+        <Route path="/review"exact>
+          <Review />
         </Route>
       </Router>
     </div>
