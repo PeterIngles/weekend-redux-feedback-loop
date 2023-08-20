@@ -13,10 +13,10 @@ export function Review() {
     console.log("surveyAnswers", surveyAnswers)
     console.log("🔴", surveyAnswers)
     let answersPackage = {
-        feeling: surveyAnswers[0],
-        understanding: surveyAnswers[1],
-        support: surveyAnswers[2],
-        comments: surveyAnswers[3],
+        Feeling: surveyAnswers[0],
+        Understanding: surveyAnswers[1],
+        Support: surveyAnswers[2],
+        Comments: surveyAnswers[3],
     }
 
     const keysAsString = Object.keys(answersPackage).map((key) => String(key));
