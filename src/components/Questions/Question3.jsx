@@ -18,7 +18,7 @@ export function Question3() {
         type: "SUBMIT_Q3",
         payload: Q3Package
       })
-      history.push('/3')
+      history.push('/4')
     }
 
     return <div>
