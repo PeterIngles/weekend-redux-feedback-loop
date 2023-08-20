@@ -24,6 +24,9 @@ const surveyAnswers = (state =[], action) => {
         console.log("surveyAnswers has recieved SUBMIT_Q1 payload")
         return [...state, action.payload]
     }
+    if (action.type === 'CLEAR_ANSWERS') {
+        return []
+    }
     return state
   }
 

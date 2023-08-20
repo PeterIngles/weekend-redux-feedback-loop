@@ -11,70 +11,47 @@ export function Review() {
 
     const history = useHistory();
     const dispatch = useDispatch();
+    console.log("surveyAnswers", surveyAnswers)
 
     let answersPackage = {
-        // feeling: surveyAnsers.surveyAnsers_name,
-        // understanding: surveyAnsers.street_address,
-        // support: surveyAnsers.city,
-        // comments: surveyAnsers.zip,
+        feeling: surveyAnswers[0],
+        understanding: surveyAnswers[1],
+        support: surveyAnswers[2],
+        comments: surveyAnswers[3],
     }
 
-    // const handleCheckout = () => {
-    //     axios.post('/answers', answersPackage)
-    //         .then(response => {
-    //             dispatch({ type: 'CLEAR_ANSWERS' })
-    //         }).catch((error) => {
-    //             console.log('put failed:', error);
-    //         })
-    //     // history.push('/')
-    // }
+    console.log("answersPackage", answersPackage)
+
+    const handleSubmit = () => {
+        console.log("inside handleSubmit")
+        axios.post('/answers', answersPackage)
+            .then(response => {
+                dispatch({ type: 'CLEAR_ANSWERS' })
+            }).catch((error) => {
+                console.log('put failed:', error);
+            })
+        history.push('/')
+    }
 
     return (
         <>
             <h1>REVIEW</h1>
-            <hr />
+
             <div>
                 <h2>Answers</h2>
                 <div>
                     <ul>
-                        {surveyAnswers.map((item, index) => { // Added closing parentheses and curly braces
-                            return <li key={index}>{item}</li>; // Added semicolon at the end of the line
+                        {surveyAnswers.map((item, index) => {
+                            return <li key={index}>{item}</li>;
                         })}
                     </ul>
                 </div>
-                {/* <p>{surveryAnswers.feeling}</p> */}
-                {/* <p>{customer.street_address}</p>
-                <p>{customer.city},{customer.state} {customer.zip}</p> */}
             </div>
 
-            {/* <div><h2>For {customer.type}</h2></div>
-
-            <table>
-                <thead>
-                    <tr>
-                        <th>Pizza Type</th><th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {cart.map((pizza, index) =>
-                        <tr key={index}>
-                            <td>
-                                {pizza.name}
-                            </td>
-                            <td>
-                                {pizza.price}
-                            </td>
-                        </tr>
-                    )}
-                </tbody>
-            </table>
-            <div>
-                <h2>Total: {cartTotal}</h2>
-            </div>
-
-            <h3><button onClick={handleCheckout}>CHECKOUT</button></h3> */}
+            <h1>
+                <button onClick={() => handleSubmit()}>SUBMIT</button>
+            </h1>
 
         </>
     );
-
 }
