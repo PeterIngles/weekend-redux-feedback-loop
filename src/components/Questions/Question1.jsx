@@ -2,7 +2,6 @@ import React from 'react';
 import { useState } from 'react';
 import { useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux';
-import { Link } from 'react-router-dom'
 import SendIcon from '@mui/icons-material/Send';
 import Button from '@mui/material/Button';
 import InputLabel from '@mui/material/InputLabel';
