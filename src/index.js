@@ -2,12 +2,17 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './components/App/App';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
+import logger from 'redux-logger';
+
+const surveyAnswers = (state =[], action) => {
+    console.log("surveyAnswers reducer")
+  }
+
 
 const reduxStore = createStore(
     combineReducers({
-        cart,
-        cartTotal,
-        currentCustomer,
         // reducers go here
     }),
     applyMiddleware(logger)
@@ -16,6 +21,8 @@ const reduxStore = createStore(
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
-        <App />
+        <Provider store={reduxStore}>
+            <App />
+        </Provider>
     </React.StrictMode>
 );
