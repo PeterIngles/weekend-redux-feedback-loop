@@ -4,6 +4,8 @@ import { List, ListItem } from '@mui/material';
 import Button from '@mui/material/Button';
 import Container from '@mui/material/Container';
 import { useHistory } from 'react-router-dom';
+import { Box } from '@mui/system';
+
 
 export function Review() {
     const surveyAnswers = useSelector(store => store.surveyAnswers)
@@ -36,17 +38,19 @@ export function Review() {
 
     return (
         <>
-            <Container>
-                <List>
-                    {surveyAnswers.map((item, index) => (
-                        <ListItem key={index}>{keysAsString[index]}   {item}</ListItem>
-                    ))}
-                </List>
+    <Box  sx={{ border: 5 }}   display="flex" flex-direction="column-reverse" alignItems="center" justifyContent="center">
+        
+            <List>
+                {surveyAnswers.map((item, index) => (
+                    <ListItem key={index}>{keysAsString[index]}: {item}</ListItem>
+                ))}
+            </List>
 
-                <Button variant="contained" onClick={() => handleSubmit()}>
-                    SUBMIT
-                </Button>
-            </Container>
-        </>
+            <Button variant="contained" onClick={() => handleSubmit()}>
+                SUBMIT
+            </Button>
+        
+    </Box>
+</>
     );
 }
